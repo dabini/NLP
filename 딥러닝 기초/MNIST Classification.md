@@ -92,6 +92,31 @@ class Trainer():
             total_loss += float(loss_i)
         return total_loss / len(x)
     
+    def _validate(self, x, y, config):
+        # Turn evaluation mode on
+        self.model.eval()
+        
+        # Turn on the no_grad mode to make more efficinity
+        with torch.no_grad():
+            # Suffle before begin
+            indices = torch.randperm(x.size(0), device=x.device)
+            x = torch.index_select(x, dim=0, index=indeces).split(config.batch_size, dim=0)
+        	y = torch.index_select(y, dim=0, index=indices).split(config.batch_size, dim=0)
+        
+        	total_loss = 0
+        
+        	for i, (x_i, y_i) in enumerate(zip(x,y)):
+            	y_hat_i = self.model(x_i)
+            	loss_i = self.crit(y_hat, y_i.squeeze())
+            
+            	if config.verbose >= 2:
+                	print("TRAIN INTERATION(%d/%d): loss=%.4e" % (i+1, len(x), float(loss_i)))
+                
+            	total_loss += float(loss_i)
+                
+        	return total_loss / len(x)
+        
+    
     def train(self, train_data, valid_data, config):
         lowest_loss = np.inf
         best_model = None
@@ -99,6 +124,7 @@ class Trainer():
         for epoch_index in range(config.n_epochs):
             train_loss = self._train(train_data[0], train_data[1], config)
             valid_loss = self.validate(valid_data[0], valid_data[1], config)
+            
             if valid_loss <= lowest_loss:
                 lowest_loss = valid_loss
                 best_model = deepcopy(self.model.state_dict())
