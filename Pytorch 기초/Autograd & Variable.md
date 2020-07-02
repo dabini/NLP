@@ -1,6 +1,10 @@
 # Autograd & Variable
 
-
+> - pytorch에서 연산을 위한 변수는 모두 Tensor로 선언되어 있어야 한다.
+> - Autograd 기능을 이용하면 Backdrop을 자동으로 수행시킬 수 있다.
+> - 그를 위해서는 Backdrop 계산을 해야하는 Tensor 형태의 변수를 Variable로 감싸야한다.
+> - Pytorch에서 제공하는 nn과 nn.functional을 이용하면 다양한 Neural Network를 위한 함수를 쉽게 사용할 수 있다.
+> - nn과 nn.functional의 차이를 알고 쓰는 것이 좋다
 
 ## Autograd
 
