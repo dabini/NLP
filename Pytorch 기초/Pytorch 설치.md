@@ -37,6 +37,8 @@
 
 ### pytorch 외 필요한 것 설치
 
+> visual code c++ 설치
+
 - `pytorch`, `jupyter` 설치
 
   ```powershell
