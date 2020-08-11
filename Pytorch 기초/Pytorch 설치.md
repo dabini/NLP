@@ -39,6 +39,8 @@
 
 > visual code c++ 설치
 
+
+
 - `pytorch`, `jupyter` 설치
 
   ```powershell
@@ -55,4 +57,6 @@
   jupyter notebook
   ```
 
-  
+
+
+
