@@ -74,5 +74,7 @@ void main()
     std::cout << "f_target = " << f_target << std:endl;
     std::cout << "f(x + dx_target) = " << getF(x + dx_target) << std::endl;
 }
+
+
 ```
 
