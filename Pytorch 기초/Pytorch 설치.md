@@ -58,5 +58,75 @@
   ```
 
 
+mmand Mode ( press Esc to enable) 
+
+
+
+shift-Enter : run cell, select below
+
+
+
+Ctrl-Enter : run cell
+
+
+
+Alt-Enter : run cell, insert below 
+
+
+
+Y : to code 
+
+
+
+M : to markdown
+
+
+
+B : insert cell below
+
+
+
+X : cut selected cell
+
+
+
+C : copy selected cell
+
+
+
+Shift-V : paste cell above
+
+
+
+V : paste cell below
+
+
+
+Z : undo last cell deletion
+
+
+
+D,D : delete selected cell
+
+
+
+Shift-M : merge cell below
+
+
+
+Edit Mode ( press Enter to enable)
+
+
+
+Shift-Tab : 툴팁표시
+
+
+
+Ctrl-] : indent
+
+
+
+Ctrl-Shift- : split cell
+
 
 
